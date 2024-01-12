@@ -1,0 +1,20 @@
+launch:
+
+- include:
+    file: "$(find-pkg-share tbot_sim)/launch/challenge-1.launch.py"
+
+- node:
+    pkg: "rviz2"
+    exec: "rviz2"
+    name: "rviz2"
+
+#- executable:
+#    cmd: xterm -e "python3 $HOME/ros_ws/pkg-tsim/tbot_sim/launch/move.py"
+
+
+
+#- executable:
+#    cmd: gnome-terminal --tab -e 'ros2 run teleop_twist_keyboard teleop_twist_keyboard'
+
+
+
