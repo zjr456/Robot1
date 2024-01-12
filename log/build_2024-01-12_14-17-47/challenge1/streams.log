@@ -1,0 +1,57 @@
+[2.183s] Invoking command in '/home/bot/mb6-space/Robot1/build/challenge1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake /home/bot/mb6-space/Robot1/challenge1 -DCMAKE_INSTALL_PREFIX=/home/bot/mb6-space/Robot1/install/challenge1
+[3.393s] -- The C compiler identification is GNU 11.4.0
+[4.420s] -- The CXX compiler identification is GNU 11.4.0
+[4.558s] -- Detecting C compiler ABI info
+[5.503s] -- Detecting C compiler ABI info - done
+[5.640s] -- Check for working C compiler: /usr/bin/cc - skipped
+[5.641s] -- Detecting C compile features
+[5.646s] -- Detecting C compile features - done
+[5.680s] -- Detecting CXX compiler ABI info
+[6.876s] -- Detecting CXX compiler ABI info - done
+[7.060s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[7.068s] -- Detecting CXX compile features
+[7.072s] -- Detecting CXX compile features - done
+[7.118s] -- Found ament_cmake: 2.0.3 (/opt/ros/iron/share/ament_cmake/cmake)
+[9.185s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[10.527s] -- Found ament_lint_auto: 0.14.2 (/opt/ros/iron/share/ament_lint_auto/cmake)
+[11.536s] -- Added test 'flake8' to check Python code syntax and style conventions
+[11.536s] -- Configured 'flake8' exclude dirs and/or files: 
+[11.551s] -- Added test 'lint_cmake' to check CMake code style
+[11.557s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[11.580s] -- Added test 'xmllint' to check XML markup files
+[11.619s] -- Configuring done
+[11.678s] -- Generating done
+[11.699s] -- Build files have been written to: /home/bot/mb6-space/Robot1/build/challenge1
+[11.800s] Invoked command in '/home/bot/mb6-space/Robot1/build/challenge1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake /home/bot/mb6-space/Robot1/challenge1 -DCMAKE_INSTALL_PREFIX=/home/bot/mb6-space/Robot1/install/challenge1
+[11.817s] Invoking command in '/home/bot/mb6-space/Robot1/build/challenge1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /home/bot/mb6-space/Robot1/build/challenge1 -- -j4 -l4
+[12.135s] Invoked command in '/home/bot/mb6-space/Robot1/build/challenge1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /home/bot/mb6-space/Robot1/build/challenge1 -- -j4 -l4
+[12.574s] Invoking command in '/home/bot/mb6-space/Robot1/build/challenge1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /home/bot/mb6-space/Robot1/build/challenge1
+[12.676s] -- Install configuration: ""
+[12.690s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch
+[12.693s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/tbot_launch.yaml
+[12.700s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/includes
+[12.702s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/includes/challenge.launch.py
+[12.717s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/includes/spawn_tbot.launch.py
+[12.719s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/includes/spawn_create.launch.py
+[12.722s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/includes/spawn_entity.launch.py
+[12.726s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/includes/spawn_kobuki.launch.py
+[12.729s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/includes/gazebo.launch.py
+[12.729s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/visualize.yaml
+[12.730s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/simulation.py
+[12.737s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/lib/challenge1/move.py
+[12.738s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/ament_index/resource_index/package_run_dependencies/challenge1
+[12.739s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/ament_index/resource_index/parent_prefix_path/challenge1
+[12.740s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/environment/ament_prefix_path.sh
+[12.741s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/environment/ament_prefix_path.dsv
+[12.742s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/environment/path.sh
+[12.742s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/environment/path.dsv
+[12.743s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/local_setup.bash
+[12.743s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/local_setup.sh
+[12.748s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/local_setup.zsh
+[12.749s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/local_setup.dsv
+[12.749s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/package.dsv
+[12.772s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/ament_index/resource_index/packages/challenge1
+[12.772s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/cmake/challenge1Config.cmake
+[12.797s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/cmake/challenge1Config-version.cmake
+[12.798s] -- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/package.xml
+[12.814s] Invoked command in '/home/bot/mb6-space/Robot1/build/challenge1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /home/bot/mb6-space/Robot1/build/challenge1

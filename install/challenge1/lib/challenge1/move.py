@@ -20,10 +20,9 @@ def scan_callback(scanMsg):
     #obstacles_left = False
     #obstacles_right = False
     obstacles = []
-    cmd_debug_points_left = []
-    cmd_debug_points_right = []
-    #obstacles_right = False
-    #obstacles_left = False
+    cmd_debug_points = []
+    obstacles_right = False
+    obstacles_left = False
 
     for aDistance in scanMsg.ranges:
         if 0.1 < aDistance < 5.0:
@@ -33,35 +32,34 @@ def scan_callback(scanMsg):
                 0
             ]
             obstacles.append(aPoint)
-            if (0.01 < aPoint[0] < 0.2 and 0.1 < aPoint[1] < 0.5):
+            if (0.01 < aPoint[0] < 0.5 and 0.15 < aPoint[1] < 1):
                 obstacles_right = True
-                cmd_debug_points_right.append(aPoint)
-            if (-0.2 < aPoint[0] < -0.01 and 0.1 < aPoint[1] < 0.5):
+                cmd_debug_points.append(aPoint)
+            if (-0.5 < aPoint[0] < -0.01 and 0.15 < aPoint[1] < 1):
                 obstacles_left = True
-                cmd_debug_points_left.append(aPoint)
+                cmd_debug_points.append(aPoint)
         angle += scanMsg.angle_increment
 
     velo = Twist()
 
-    time.sleep(0.1)
-    if len(cmd_debug_points_right) + len(cmd_debug_points_left) > 150:
-        velo.linear.x = 0.0
-        velo.angular.z = 0.16
-        time.sleep(0.5)
-        
-
-    elif len(cmd_debug_points_right) > len(cmd_debug_points_left):
+    if obstacles_left == True:
+    #if len(cmd_debug_points_right) > len(cmd_debug_points_left)  :
         print("go Left")
-        velo.angular.z = 0.005 * (len(cmd_debug_points_right) + len(cmd_debug_points_left)) + 0.013 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
+        # print(len(cmd_debug_points), cmd_debug_points)
+        velo.angular.z = 0.5
         velo.linear.x = 0.0
-    
-    elif len(cmd_debug_points_right) < len(cmd_debug_points_left):
-        print("go right")
-        velo.angular.z = 0.005 * (len(cmd_debug_points_right) + len(cmd_debug_points_left)) + 0.013 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
+        time.sleep(1.0)
+
+    elif obstacles_right == True:  
+    #elif len(cmd_debug_points_left) > len(cmd_debug_points_right):
+        print("go Right")
+        # print(len(cmd_debug_points), cmd_debug_points)
+        velo.angular.z = -0.5
         velo.linear.x = 0.0
+        time.sleep(1.0)
 
     else:
-        velo.linear.x = 0.3
+        velo.linear.x = 0.2
         velo.angular.z = 0.0
 
         
@@ -69,7 +67,7 @@ def scan_callback(scanMsg):
     
 
     velocity_publisher.publish(velo)
-    cloudPoints = pc2.create_cloud_xyz32(Header(frame_id='laser_link'),obstacles)
+    cloudPoints = pc2.create_cloud_xyz32(Header(frame_id='laser_link'),cmd_debug_points)
     cloud_publisher.publish(cloudPoints)
 
 

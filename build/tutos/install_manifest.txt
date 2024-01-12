@@ -1,0 +1,15 @@
+/home/bot/mb6-space/Robot1/install/tutos/share/ament_index/resource_index/package_run_dependencies/tutos
+/home/bot/mb6-space/Robot1/install/tutos/share/ament_index/resource_index/parent_prefix_path/tutos
+/home/bot/mb6-space/Robot1/install/tutos/share/tutos/environment/ament_prefix_path.sh
+/home/bot/mb6-space/Robot1/install/tutos/share/tutos/environment/ament_prefix_path.dsv
+/home/bot/mb6-space/Robot1/install/tutos/share/tutos/environment/path.sh
+/home/bot/mb6-space/Robot1/install/tutos/share/tutos/environment/path.dsv
+/home/bot/mb6-space/Robot1/install/tutos/share/tutos/local_setup.bash
+/home/bot/mb6-space/Robot1/install/tutos/share/tutos/local_setup.sh
+/home/bot/mb6-space/Robot1/install/tutos/share/tutos/local_setup.zsh
+/home/bot/mb6-space/Robot1/install/tutos/share/tutos/local_setup.dsv
+/home/bot/mb6-space/Robot1/install/tutos/share/tutos/package.dsv
+/home/bot/mb6-space/Robot1/install/tutos/share/ament_index/resource_index/packages/tutos
+/home/bot/mb6-space/Robot1/install/tutos/share/tutos/cmake/tutosConfig.cmake
+/home/bot/mb6-space/Robot1/install/tutos/share/tutos/cmake/tutosConfig-version.cmake
+/home/bot/mb6-space/Robot1/install/tutos/share/tutos/package.xml

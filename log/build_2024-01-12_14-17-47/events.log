@@ -1,0 +1,280 @@
+[0.000000] (-) TimerEvent: {}
+[0.011903] (challenge1) JobQueued: {'identifier': 'challenge1', 'dependencies': OrderedDict()}
+[0.012191] (tutos) JobQueued: {'identifier': 'tutos', 'dependencies': OrderedDict()}
+[0.012401] (challenge1) JobStarted: {'identifier': 'challenge1'}
+[0.099464] (-) TimerEvent: {}
+[0.200801] (-) TimerEvent: {}
+[0.302186] (-) TimerEvent: {}
+[0.403272] (-) TimerEvent: {}
+[0.505041] (-) TimerEvent: {}
+[0.609183] (-) TimerEvent: {}
+[0.711846] (-) TimerEvent: {}
+[0.814070] (-) TimerEvent: {}
+[0.920258] (-) TimerEvent: {}
+[1.028259] (-) TimerEvent: {}
+[1.066799] (tutos) JobStarted: {'identifier': 'tutos'}
+[1.128620] (-) TimerEvent: {}
+[1.240125] (-) TimerEvent: {}
+[1.341314] (-) TimerEvent: {}
+[1.443991] (-) TimerEvent: {}
+[1.546160] (-) TimerEvent: {}
+[1.647326] (-) TimerEvent: {}
+[1.757234] (-) TimerEvent: {}
+[1.858376] (-) TimerEvent: {}
+[1.960482] (-) TimerEvent: {}
+[2.061838] (-) TimerEvent: {}
+[2.164186] (-) TimerEvent: {}
+[2.188933] (challenge1) JobProgress: {'identifier': 'challenge1', 'progress': 'cmake'}
+[2.191443] (challenge1) Command: {'cmd': ['/usr/bin/cmake', '/home/bot/mb6-space/Robot1/challenge1', '-DCMAKE_INSTALL_PREFIX=/home/bot/mb6-space/Robot1/install/challenge1'], 'cwd': '/home/bot/mb6-space/Robot1/build/challenge1', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'bot'), ('LC_TIME', 'fr_FR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/bot/mb6-space/install/kobuki_node/lib:/home/bot/mb6-space/install/kobuki_ros_interfaces/lib:/home/bot/mb6-space/install/kobuki_core/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/iron/opt/rviz_ogre_vendor/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib'), ('HOME', '/home/bot'), ('OLDPWD', '/home/bot/mb6-space/Robot1/challenge1'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('SYSTEMD_EXEC_PID', '2441'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/bot/mb6-space/install'), ('ROS_DISTRO', 'iron'), ('LOGNAME', 'bot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'bot'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('PATH', '/home/bot/mb6-space/install/kobuki_core/bin:/opt/ros/iron/bin:/home/bot/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/xps-41396:@/tmp/.ICE-unix/1845,unix/xps-41396:/tmp/.ICE-unix/1845'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/024d5619_991f_4247_b9db_b0f5dc3c8efd'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.4ICOH2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.97'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '03'), ('AMENT_PREFIX_PATH', '/home/bot/mb6-space/install/tutos:/home/bot/mb6-space/install/tbot_sim:/home/bot/mb6-space/install/tbot_node:/home/bot/mb6-space/install/kobuki_ros:/home/bot/mb6-space/install/kobuki_node:/home/bot/mb6-space/install/kobuki_ros_interfaces:/home/bot/mb6-space/install/kobuki_core:/home/bot/mb6-space/install/draft_mb6:/home/bot/mb6-space/install/challenge1:/opt/ros/iron'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/bot/mb6-space/Robot1/build/challenge1'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/bot/mb6-space/install/kobuki_ros_interfaces/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('ROS_WORKSPACE', 'mb6-space'), ('CMAKE_PREFIX_PATH', '/home/bot/mb6-space/install/tutos:/home/bot/mb6-space/install/tbot_sim:/home/bot/mb6-space/install/tbot_node:/home/bot/mb6-space/install/kobuki_ros:/home/bot/mb6-space/install/kobuki_node:/home/bot/mb6-space/install/kobuki_ros_interfaces:/home/bot/mb6-space/install/kobuki_core:/home/bot/mb6-space/install/draft_mb6:/home/bot/mb6-space/install/challenge1:/opt/ros/iron')]), 'shell': False}
+[2.273074] (tutos) JobProgress: {'identifier': 'tutos', 'progress': 'cmake'}
+[2.273294] (-) TimerEvent: {}
+[2.273836] (tutos) Command: {'cmd': ['/usr/bin/cmake', '/home/bot/mb6-space/Robot1/tutos', '-DCMAKE_INSTALL_PREFIX=/home/bot/mb6-space/Robot1/install/tutos'], 'cwd': '/home/bot/mb6-space/Robot1/build/tutos', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'bot'), ('LC_TIME', 'fr_FR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/bot/mb6-space/install/kobuki_node/lib:/home/bot/mb6-space/install/kobuki_ros_interfaces/lib:/home/bot/mb6-space/install/kobuki_core/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/iron/opt/rviz_ogre_vendor/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib'), ('HOME', '/home/bot'), ('OLDPWD', '/home/bot/mb6-space/Robot1/challenge1'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('SYSTEMD_EXEC_PID', '2441'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/bot/mb6-space/install'), ('ROS_DISTRO', 'iron'), ('LOGNAME', 'bot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'bot'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('PATH', '/home/bot/mb6-space/install/kobuki_core/bin:/opt/ros/iron/bin:/home/bot/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/xps-41396:@/tmp/.ICE-unix/1845,unix/xps-41396:/tmp/.ICE-unix/1845'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/024d5619_991f_4247_b9db_b0f5dc3c8efd'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.4ICOH2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.97'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '03'), ('AMENT_PREFIX_PATH', '/home/bot/mb6-space/install/tutos:/home/bot/mb6-space/install/tbot_sim:/home/bot/mb6-space/install/tbot_node:/home/bot/mb6-space/install/kobuki_ros:/home/bot/mb6-space/install/kobuki_node:/home/bot/mb6-space/install/kobuki_ros_interfaces:/home/bot/mb6-space/install/kobuki_core:/home/bot/mb6-space/install/draft_mb6:/home/bot/mb6-space/install/challenge1:/opt/ros/iron'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/bot/mb6-space/Robot1/build/tutos'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/bot/mb6-space/install/kobuki_ros_interfaces/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('ROS_WORKSPACE', 'mb6-space'), ('CMAKE_PREFIX_PATH', '/home/bot/mb6-space/install/tutos:/home/bot/mb6-space/install/tbot_sim:/home/bot/mb6-space/install/tbot_node:/home/bot/mb6-space/install/kobuki_ros:/home/bot/mb6-space/install/kobuki_node:/home/bot/mb6-space/install/kobuki_ros_interfaces:/home/bot/mb6-space/install/kobuki_core:/home/bot/mb6-space/install/draft_mb6:/home/bot/mb6-space/install/challenge1:/opt/ros/iron')]), 'shell': False}
+[2.373665] (-) TimerEvent: {}
+[2.475860] (-) TimerEvent: {}
+[2.577631] (-) TimerEvent: {}
+[2.679025] (-) TimerEvent: {}
+[2.780228] (-) TimerEvent: {}
+[2.882205] (-) TimerEvent: {}
+[2.984679] (-) TimerEvent: {}
+[3.088975] (-) TimerEvent: {}
+[3.190635] (-) TimerEvent: {}
+[3.293683] (-) TimerEvent: {}
+[3.375153] (tutos) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[3.393875] (-) TimerEvent: {}
+[3.404860] (challenge1) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[3.494203] (-) TimerEvent: {}
+[3.596966] (-) TimerEvent: {}
+[3.704313] (-) TimerEvent: {}
+[3.808149] (-) TimerEvent: {}
+[3.911134] (-) TimerEvent: {}
+[4.013872] (-) TimerEvent: {}
+[4.115120] (-) TimerEvent: {}
+[4.216517] (-) TimerEvent: {}
+[4.318229] (-) TimerEvent: {}
+[4.400702] (tutos) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[4.418772] (-) TimerEvent: {}
+[4.432260] (challenge1) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[4.519323] (-) TimerEvent: {}
+[4.570027] (challenge1) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.574272] (tutos) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.619605] (-) TimerEvent: {}
+[4.726360] (-) TimerEvent: {}
+[4.828522] (-) TimerEvent: {}
+[4.930491] (-) TimerEvent: {}
+[5.031528] (-) TimerEvent: {}
+[5.132736] (-) TimerEvent: {}
+[5.233595] (-) TimerEvent: {}
+[5.334940] (-) TimerEvent: {}
+[5.436489] (-) TimerEvent: {}
+[5.492875] (tutos) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[5.514608] (challenge1) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[5.536692] (-) TimerEvent: {}
+[5.637952] (-) TimerEvent: {}
+[5.643944] (tutos) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[5.647038] (tutos) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[5.651731] (challenge1) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[5.653331] (challenge1) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[5.654825] (tutos) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[5.657651] (challenge1) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[5.692200] (challenge1) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[5.709310] (tutos) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[5.738290] (-) TimerEvent: {}
+[5.840139] (-) TimerEvent: {}
+[5.941251] (-) TimerEvent: {}
+[6.042753] (-) TimerEvent: {}
+[6.146538] (-) TimerEvent: {}
+[6.247953] (-) TimerEvent: {}
+[6.349020] (-) TimerEvent: {}
+[6.450951] (-) TimerEvent: {}
+[6.553734] (-) TimerEvent: {}
+[6.655854] (-) TimerEvent: {}
+[6.757238] (-) TimerEvent: {}
+[6.861233] (-) TimerEvent: {}
+[6.888215] (challenge1) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.925499] (tutos) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.961381] (-) TimerEvent: {}
+[7.028592] (tutos) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[7.030237] (tutos) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[7.038717] (tutos) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[7.061555] (-) TimerEvent: {}
+[7.071665] (challenge1) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[7.079314] (challenge1) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[7.084103] (challenge1) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[7.093099] (tutos) StdoutLine: {'line': b'-- Found ament_cmake: 2.0.3 (/opt/ros/iron/share/ament_cmake/cmake)\n'}
+[7.129774] (challenge1) StdoutLine: {'line': b'-- Found ament_cmake: 2.0.3 (/opt/ros/iron/share/ament_cmake/cmake)\n'}
+[7.161843] (-) TimerEvent: {}
+[7.263284] (-) TimerEvent: {}
+[7.367121] (-) TimerEvent: {}
+[7.468719] (-) TimerEvent: {}
+[7.570426] (-) TimerEvent: {}
+[7.672722] (-) TimerEvent: {}
+[7.775003] (-) TimerEvent: {}
+[7.876543] (-) TimerEvent: {}
+[7.978499] (-) TimerEvent: {}
+[8.079442] (-) TimerEvent: {}
+[8.180653] (-) TimerEvent: {}
+[8.282581] (-) TimerEvent: {}
+[8.387293] (-) TimerEvent: {}
+[8.489940] (-) TimerEvent: {}
+[8.591158] (-) TimerEvent: {}
+[8.692435] (-) TimerEvent: {}
+[8.793542] (-) TimerEvent: {}
+[8.894854] (-) TimerEvent: {}
+[8.997324] (-) TimerEvent: {}
+[9.083564] (tutos) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter \n'}
+[9.097576] (-) TimerEvent: {}
+[9.196857] (challenge1) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter \n'}
+[9.197517] (-) TimerEvent: {}
+[9.298831] (-) TimerEvent: {}
+[9.401543] (-) TimerEvent: {}
+[9.502643] (-) TimerEvent: {}
+[9.603752] (-) TimerEvent: {}
+[9.704842] (-) TimerEvent: {}
+[9.806068] (-) TimerEvent: {}
+[9.907553] (-) TimerEvent: {}
+[10.010969] (-) TimerEvent: {}
+[10.113402] (-) TimerEvent: {}
+[10.214525] (-) TimerEvent: {}
+[10.316566] (-) TimerEvent: {}
+[10.417737] (-) TimerEvent: {}
+[10.518978] (-) TimerEvent: {}
+[10.538728] (challenge1) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.14.2 (/opt/ros/iron/share/ament_lint_auto/cmake)\n'}
+[10.561034] (tutos) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.14.2 (/opt/ros/iron/share/ament_lint_auto/cmake)\n'}
+[10.619153] (-) TimerEvent: {}
+[10.720130] (-) TimerEvent: {}
+[10.822960] (-) TimerEvent: {}
+[10.927832] (-) TimerEvent: {}
+[11.028753] (-) TimerEvent: {}
+[11.130296] (-) TimerEvent: {}
+[11.231341] (-) TimerEvent: {}
+[11.332441] (-) TimerEvent: {}
+[11.433367] (-) TimerEvent: {}
+[11.535309] (-) TimerEvent: {}
+[11.547692] (challenge1) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[11.548321] (challenge1) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[11.562833] (challenge1) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[11.568919] (challenge1) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[11.591521] (challenge1) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[11.630799] (challenge1) StdoutLine: {'line': b'-- Configuring done\n'}
+[11.635642] (-) TimerEvent: {}
+[11.690107] (challenge1) StdoutLine: {'line': b'-- Generating done\n'}
+[11.710061] (challenge1) StdoutLine: {'line': b'-- Build files have been written to: /home/bot/mb6-space/Robot1/build/challenge1\n'}
+[11.730252] (tutos) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[11.731048] (tutos) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[11.735850] (-) TimerEvent: {}
+[11.737810] (tutos) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[11.741213] (tutos) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[11.753071] (tutos) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[11.761679] (tutos) StdoutLine: {'line': b'-- Configuring done\n'}
+[11.809974] (challenge1) CommandEnded: {'returncode': 0}
+[11.815562] (challenge1) JobProgress: {'identifier': 'challenge1', 'progress': 'build'}
+[11.819254] (tutos) StdoutLine: {'line': b'-- Generating done\n'}
+[11.820692] (tutos) StdoutLine: {'line': b'-- Build files have been written to: /home/bot/mb6-space/Robot1/build/tutos\n'}
+[11.827734] (challenge1) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/bot/mb6-space/Robot1/build/challenge1', '--', '-j4', '-l4'], 'cwd': '/home/bot/mb6-space/Robot1/build/challenge1', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'bot'), ('LC_TIME', 'fr_FR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/bot/mb6-space/install/kobuki_node/lib:/home/bot/mb6-space/install/kobuki_ros_interfaces/lib:/home/bot/mb6-space/install/kobuki_core/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/iron/opt/rviz_ogre_vendor/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib'), ('HOME', '/home/bot'), ('OLDPWD', '/home/bot/mb6-space/Robot1/challenge1'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('SYSTEMD_EXEC_PID', '2441'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/bot/mb6-space/install'), ('ROS_DISTRO', 'iron'), ('LOGNAME', 'bot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'bot'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('PATH', '/home/bot/mb6-space/install/kobuki_core/bin:/opt/ros/iron/bin:/home/bot/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/xps-41396:@/tmp/.ICE-unix/1845,unix/xps-41396:/tmp/.ICE-unix/1845'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/024d5619_991f_4247_b9db_b0f5dc3c8efd'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.4ICOH2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.97'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '03'), ('AMENT_PREFIX_PATH', '/home/bot/mb6-space/install/tutos:/home/bot/mb6-space/install/tbot_sim:/home/bot/mb6-space/install/tbot_node:/home/bot/mb6-space/install/kobuki_ros:/home/bot/mb6-space/install/kobuki_node:/home/bot/mb6-space/install/kobuki_ros_interfaces:/home/bot/mb6-space/install/kobuki_core:/home/bot/mb6-space/install/draft_mb6:/home/bot/mb6-space/install/challenge1:/opt/ros/iron'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/bot/mb6-space/Robot1/build/challenge1'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/bot/mb6-space/install/kobuki_ros_interfaces/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('ROS_WORKSPACE', 'mb6-space'), ('CMAKE_PREFIX_PATH', '/home/bot/mb6-space/install/tutos:/home/bot/mb6-space/install/tbot_sim:/home/bot/mb6-space/install/tbot_node:/home/bot/mb6-space/install/kobuki_ros:/home/bot/mb6-space/install/kobuki_node:/home/bot/mb6-space/install/kobuki_ros_interfaces:/home/bot/mb6-space/install/kobuki_core:/home/bot/mb6-space/install/draft_mb6:/home/bot/mb6-space/install/challenge1:/opt/ros/iron')]), 'shell': False}
+[11.836411] (-) TimerEvent: {}
+[11.845495] (tutos) CommandEnded: {'returncode': 0}
+[11.849333] (tutos) JobProgress: {'identifier': 'tutos', 'progress': 'build'}
+[11.853699] (tutos) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/bot/mb6-space/Robot1/build/tutos', '--', '-j4', '-l4'], 'cwd': '/home/bot/mb6-space/Robot1/build/tutos', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'bot'), ('LC_TIME', 'fr_FR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/bot/mb6-space/install/kobuki_node/lib:/home/bot/mb6-space/install/kobuki_ros_interfaces/lib:/home/bot/mb6-space/install/kobuki_core/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/iron/opt/rviz_ogre_vendor/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib'), ('HOME', '/home/bot'), ('OLDPWD', '/home/bot/mb6-space/Robot1/challenge1'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('SYSTEMD_EXEC_PID', '2441'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/bot/mb6-space/install'), ('ROS_DISTRO', 'iron'), ('LOGNAME', 'bot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'bot'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('PATH', '/home/bot/mb6-space/install/kobuki_core/bin:/opt/ros/iron/bin:/home/bot/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/xps-41396:@/tmp/.ICE-unix/1845,unix/xps-41396:/tmp/.ICE-unix/1845'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/024d5619_991f_4247_b9db_b0f5dc3c8efd'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.4ICOH2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.97'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '03'), ('AMENT_PREFIX_PATH', '/home/bot/mb6-space/install/tutos:/home/bot/mb6-space/install/tbot_sim:/home/bot/mb6-space/install/tbot_node:/home/bot/mb6-space/install/kobuki_ros:/home/bot/mb6-space/install/kobuki_node:/home/bot/mb6-space/install/kobuki_ros_interfaces:/home/bot/mb6-space/install/kobuki_core:/home/bot/mb6-space/install/draft_mb6:/home/bot/mb6-space/install/challenge1:/opt/ros/iron'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/bot/mb6-space/Robot1/build/tutos'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/bot/mb6-space/install/kobuki_ros_interfaces/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('ROS_WORKSPACE', 'mb6-space'), ('CMAKE_PREFIX_PATH', '/home/bot/mb6-space/install/tutos:/home/bot/mb6-space/install/tbot_sim:/home/bot/mb6-space/install/tbot_node:/home/bot/mb6-space/install/kobuki_ros:/home/bot/mb6-space/install/kobuki_node:/home/bot/mb6-space/install/kobuki_ros_interfaces:/home/bot/mb6-space/install/kobuki_core:/home/bot/mb6-space/install/draft_mb6:/home/bot/mb6-space/install/challenge1:/opt/ros/iron')]), 'shell': False}
+[11.939994] (-) TimerEvent: {}
+[12.042046] (-) TimerEvent: {}
+[12.142832] (-) TimerEvent: {}
+[12.146170] (challenge1) CommandEnded: {'returncode': 0}
+[12.243028] (-) TimerEvent: {}
+[12.315857] (tutos) CommandEnded: {'returncode': 0}
+[12.344315] (-) TimerEvent: {}
+[12.445967] (-) TimerEvent: {}
+[12.496205] (challenge1) JobProgress: {'identifier': 'challenge1', 'progress': 'install'}
+[12.546160] (-) TimerEvent: {}
+[12.584844] (challenge1) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/bot/mb6-space/Robot1/build/challenge1'], 'cwd': '/home/bot/mb6-space/Robot1/build/challenge1', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'bot'), ('LC_TIME', 'fr_FR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/bot/mb6-space/install/kobuki_node/lib:/home/bot/mb6-space/install/kobuki_ros_interfaces/lib:/home/bot/mb6-space/install/kobuki_core/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/iron/opt/rviz_ogre_vendor/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib'), ('HOME', '/home/bot'), ('OLDPWD', '/home/bot/mb6-space/Robot1/challenge1'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('SYSTEMD_EXEC_PID', '2441'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/bot/mb6-space/install'), ('ROS_DISTRO', 'iron'), ('LOGNAME', 'bot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'bot'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('PATH', '/home/bot/mb6-space/install/kobuki_core/bin:/opt/ros/iron/bin:/home/bot/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/xps-41396:@/tmp/.ICE-unix/1845,unix/xps-41396:/tmp/.ICE-unix/1845'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/024d5619_991f_4247_b9db_b0f5dc3c8efd'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.4ICOH2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.97'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '03'), ('AMENT_PREFIX_PATH', '/home/bot/mb6-space/install/tutos:/home/bot/mb6-space/install/tbot_sim:/home/bot/mb6-space/install/tbot_node:/home/bot/mb6-space/install/kobuki_ros:/home/bot/mb6-space/install/kobuki_node:/home/bot/mb6-space/install/kobuki_ros_interfaces:/home/bot/mb6-space/install/kobuki_core:/home/bot/mb6-space/install/draft_mb6:/home/bot/mb6-space/install/challenge1:/opt/ros/iron'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/bot/mb6-space/Robot1/build/challenge1'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/bot/mb6-space/install/kobuki_ros_interfaces/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('ROS_WORKSPACE', 'mb6-space'), ('CMAKE_PREFIX_PATH', '/home/bot/mb6-space/install/tutos:/home/bot/mb6-space/install/tbot_sim:/home/bot/mb6-space/install/tbot_node:/home/bot/mb6-space/install/kobuki_ros:/home/bot/mb6-space/install/kobuki_node:/home/bot/mb6-space/install/kobuki_ros_interfaces:/home/bot/mb6-space/install/kobuki_core:/home/bot/mb6-space/install/draft_mb6:/home/bot/mb6-space/install/challenge1:/opt/ros/iron')]), 'shell': False}
+[12.646364] (-) TimerEvent: {}
+[12.688029] (challenge1) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[12.691505] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch\n'}
+[12.703189] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/tbot_launch.yaml\n'}
+[12.705287] (tutos) JobProgress: {'identifier': 'tutos', 'progress': 'install'}
+[12.705550] (tutos) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/bot/mb6-space/Robot1/build/tutos'], 'cwd': '/home/bot/mb6-space/Robot1/build/tutos', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'bot'), ('LC_TIME', 'fr_FR.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/bot/mb6-space/install/kobuki_node/lib:/home/bot/mb6-space/install/kobuki_ros_interfaces/lib:/home/bot/mb6-space/install/kobuki_core/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/iron/opt/rviz_ogre_vendor/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib'), ('HOME', '/home/bot'), ('OLDPWD', '/home/bot/mb6-space/Robot1/challenge1'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('SYSTEMD_EXEC_PID', '2441'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/bot/mb6-space/install'), ('ROS_DISTRO', 'iron'), ('LOGNAME', 'bot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'bot'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('PATH', '/home/bot/mb6-space/install/kobuki_core/bin:/opt/ros/iron/bin:/home/bot/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/xps-41396:@/tmp/.ICE-unix/1845,unix/xps-41396:/tmp/.ICE-unix/1845'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/024d5619_991f_4247_b9db_b0f5dc3c8efd'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.4ICOH2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.97'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '03'), ('AMENT_PREFIX_PATH', '/home/bot/mb6-space/install/tutos:/home/bot/mb6-space/install/tbot_sim:/home/bot/mb6-space/install/tbot_node:/home/bot/mb6-space/install/kobuki_ros:/home/bot/mb6-space/install/kobuki_node:/home/bot/mb6-space/install/kobuki_ros_interfaces:/home/bot/mb6-space/install/kobuki_core:/home/bot/mb6-space/install/draft_mb6:/home/bot/mb6-space/install/challenge1:/opt/ros/iron'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/bot/mb6-space/Robot1/build/tutos'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/bot/mb6-space/install/kobuki_ros_interfaces/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('ROS_WORKSPACE', 'mb6-space'), ('CMAKE_PREFIX_PATH', '/home/bot/mb6-space/install/tutos:/home/bot/mb6-space/install/tbot_sim:/home/bot/mb6-space/install/tbot_node:/home/bot/mb6-space/install/kobuki_ros:/home/bot/mb6-space/install/kobuki_node:/home/bot/mb6-space/install/kobuki_ros_interfaces:/home/bot/mb6-space/install/kobuki_core:/home/bot/mb6-space/install/draft_mb6:/home/bot/mb6-space/install/challenge1:/opt/ros/iron')]), 'shell': False}
+[12.712277] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/includes\n'}
+[12.713451] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/includes/challenge.launch.py\n'}
+[12.728823] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/includes/spawn_tbot.launch.py\n'}
+[12.730299] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/includes/spawn_create.launch.py\n'}
+[12.731298] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/includes/spawn_entity.launch.py\n'}
+[12.737708] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/includes/spawn_kobuki.launch.py\n'}
+[12.740571] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/includes/gazebo.launch.py\n'}
+[12.741549] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/visualize.yaml\n'}
+[12.742224] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/launch/simulation.py\n'}
+[12.747130] (-) TimerEvent: {}
+[12.748979] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/lib/challenge1/move.py\n'}
+[12.750161] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/ament_index/resource_index/package_run_dependencies/challenge1\n'}
+[12.751094] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/ament_index/resource_index/parent_prefix_path/challenge1\n'}
+[12.752185] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/environment/ament_prefix_path.sh\n'}
+[12.752989] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/environment/ament_prefix_path.dsv\n'}
+[12.753621] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/environment/path.sh\n'}
+[12.754187] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/environment/path.dsv\n'}
+[12.754845] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/local_setup.bash\n'}
+[12.755545] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/local_setup.sh\n'}
+[12.759821] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/local_setup.zsh\n'}
+[12.760697] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/local_setup.dsv\n'}
+[12.761458] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/package.dsv\n'}
+[12.783532] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/ament_index/resource_index/packages/challenge1\n'}
+[12.784417] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/cmake/challenge1Config.cmake\n'}
+[12.788992] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/cmake/challenge1Config-version.cmake\n'}
+[12.809636] (challenge1) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/challenge1/share/challenge1/package.xml\n'}
+[12.810114] (tutos) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[12.810599] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/ament_index/resource_index/package_run_dependencies/tutos\n'}
+[12.811072] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/ament_index/resource_index/parent_prefix_path/tutos\n'}
+[12.811491] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/tutos/environment/ament_prefix_path.sh\n'}
+[12.812010] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/tutos/environment/ament_prefix_path.dsv\n'}
+[12.812543] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/tutos/environment/path.sh\n'}
+[12.813049] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/tutos/environment/path.dsv\n'}
+[12.813573] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/tutos/local_setup.bash\n'}
+[12.822821] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/tutos/local_setup.sh\n'}
+[12.823323] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/tutos/local_setup.zsh\n'}
+[12.823917] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/tutos/local_setup.dsv\n'}
+[12.824492] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/tutos/package.dsv\n'}
+[12.824912] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/ament_index/resource_index/packages/tutos\n'}
+[12.825285] (challenge1) CommandEnded: {'returncode': 0}
+[12.827142] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/tutos/cmake/tutosConfig.cmake\n'}
+[12.827597] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/tutos/cmake/tutosConfig-version.cmake\n'}
+[12.828277] (tutos) StdoutLine: {'line': b'-- Installing: /home/bot/mb6-space/Robot1/install/tutos/share/tutos/package.xml\n'}
+[12.849579] (-) TimerEvent: {}
+[12.950630] (-) TimerEvent: {}
+[13.052155] (-) TimerEvent: {}
+[13.153954] (-) TimerEvent: {}
+[13.255898] (-) TimerEvent: {}
+[13.358062] (-) TimerEvent: {}
+[13.464095] (-) TimerEvent: {}
+[13.511957] (tutos) CommandEnded: {'returncode': 0}
+[13.569183] (-) TimerEvent: {}
+[13.670880] (-) TimerEvent: {}
+[13.772003] (-) TimerEvent: {}
+[13.885875] (-) TimerEvent: {}
+[13.991536] (-) TimerEvent: {}
+[14.094130] (-) TimerEvent: {}
+[14.195920] (-) TimerEvent: {}
+[14.298788] (-) TimerEvent: {}
+[14.405293] (-) TimerEvent: {}
+[14.510730] (-) TimerEvent: {}
+[14.615112] (-) TimerEvent: {}
+[14.721232] (-) TimerEvent: {}
+[14.823543] (-) TimerEvent: {}
+[14.925240] (-) TimerEvent: {}
+[15.027485] (-) TimerEvent: {}
+[15.129657] (-) TimerEvent: {}
+[15.232175] (-) TimerEvent: {}
+[15.340030] (-) TimerEvent: {}
+[15.444258] (-) TimerEvent: {}
+[15.552833] (-) TimerEvent: {}
+[15.654414] (-) TimerEvent: {}
+[15.740498] (challenge1) JobEnded: {'identifier': 'challenge1', 'rc': 0}
+[15.754811] (-) TimerEvent: {}
+[15.856653] (-) TimerEvent: {}
+[15.958713] (-) TimerEvent: {}
+[16.060967] (-) TimerEvent: {}
+[16.165870] (-) TimerEvent: {}
+[16.270167] (-) TimerEvent: {}
+[16.371479] (-) TimerEvent: {}
+[16.476141] (-) TimerEvent: {}
+[16.577326] (-) TimerEvent: {}
+[16.679476] (-) TimerEvent: {}
+[16.781282] (-) TimerEvent: {}
+[16.849848] (tutos) JobEnded: {'identifier': 'tutos', 'rc': 0}
+[16.856461] (-) EventReactorShutdown: {}

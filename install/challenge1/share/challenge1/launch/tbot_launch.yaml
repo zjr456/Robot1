@@ -1,0 +1,14 @@
+launch:
+
+- executable:
+    cmd: gnome-terminal --tab -e "ros2 launch tbot_node minimal_launch.yaml" 
+
+- node:
+    pkg: "challenge1"
+    exec: "move.py"
+    name: "move"
+
+
+
+
+

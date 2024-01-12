@@ -1,0 +1,6 @@
+Invoking command in '/home/bot/mb6-space/Robot1/build/tutos': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake /home/bot/mb6-space/Robot1/tutos -DCMAKE_INSTALL_PREFIX=/home/bot/mb6-space/Robot1/install/tutos
+Invoked command in '/home/bot/mb6-space/Robot1/build/tutos' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake /home/bot/mb6-space/Robot1/tutos -DCMAKE_INSTALL_PREFIX=/home/bot/mb6-space/Robot1/install/tutos
+Invoking command in '/home/bot/mb6-space/Robot1/build/tutos': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /home/bot/mb6-space/Robot1/build/tutos -- -j4 -l4
+Invoked command in '/home/bot/mb6-space/Robot1/build/tutos' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --build /home/bot/mb6-space/Robot1/build/tutos -- -j4 -l4
+Invoking command in '/home/bot/mb6-space/Robot1/build/tutos': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /home/bot/mb6-space/Robot1/build/tutos
+Invoked command in '/home/bot/mb6-space/Robot1/build/tutos' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/iron /usr/bin/cmake --install /home/bot/mb6-space/Robot1/build/tutos

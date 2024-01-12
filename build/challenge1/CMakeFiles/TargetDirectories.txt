@@ -1,0 +1,9 @@
+/home/bot/mb6-space/Robot1/build/challenge1/CMakeFiles/uninstall.dir
+/home/bot/mb6-space/Robot1/build/challenge1/CMakeFiles/challenge1_uninstall.dir
+/home/bot/mb6-space/Robot1/build/challenge1/CMakeFiles/test.dir
+/home/bot/mb6-space/Robot1/build/challenge1/CMakeFiles/edit_cache.dir
+/home/bot/mb6-space/Robot1/build/challenge1/CMakeFiles/rebuild_cache.dir
+/home/bot/mb6-space/Robot1/build/challenge1/CMakeFiles/list_install_components.dir
+/home/bot/mb6-space/Robot1/build/challenge1/CMakeFiles/install.dir
+/home/bot/mb6-space/Robot1/build/challenge1/CMakeFiles/install/local.dir
+/home/bot/mb6-space/Robot1/build/challenge1/CMakeFiles/install/strip.dir

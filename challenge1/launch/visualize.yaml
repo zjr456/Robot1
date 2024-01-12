@@ -4,9 +4,14 @@ launch:
     pkg: "rviz2"
     exec: "rviz2"
     name: "rviz2"
+    
+- node:
+   pkg: "tbot_node"
+   exec: "multiplexer"
+   name: "multiplexer"
+
 
 - executable:
-   cmd: gnome-terminal --tab -e 'ros2 run teleop_twist_keyboard teleop_twist_keyboard'
-
+   cmd: "gnome-terminal --tab -e 'ros2 run teleop_twist_keyboard teleop_twist_keyboard'"
 
 
