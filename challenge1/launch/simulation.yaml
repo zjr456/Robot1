@@ -1,0 +1,6 @@
+launch:
+
+- include:
+    file: "$(find-pkg-share tbot_sim)/launch/challenge-1.launch.py"
+
+
