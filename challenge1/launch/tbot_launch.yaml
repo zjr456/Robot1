@@ -1,17 +1,14 @@
 launch:
 
-#- executable:
-#    cmd: xterm -e "python3 $HOME/ros_ws/pkg-tsim/tbot_sim/launch/move.py"
+- executable:
+    cmd: gnome-terminal --tab -e "ros2 launch tbot_node minimal_launch.yaml" 
 
 - node:
     pkg: "challenge1"
     exec: "move.py"
-    name: "move py"
+    name: "move"
 
-- node:
-    pkg: "challenge1"
-    exec: "move.py"
-    name: "move py"
+
 
 
 

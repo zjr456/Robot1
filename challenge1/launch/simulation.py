@@ -6,7 +6,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
     
-    tbot_sim_path = get_package_share_directory('challenge1')
+    challenge1_path = get_package_share_directory('challenge1')
     launch_file_dir = os.path.join(challenge1_path, 'launch','includes')
 
     return LaunchDescription([
