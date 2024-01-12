@@ -4,7 +4,14 @@ import sys, cv2, rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image 
 from cv_bridge import CvBridge
-
+from std_msgs.msg import String
+import cv2
+import numpy as np
+import os
+from sklearn.svm import LinearSVC
+from scipy.cluster.vq import *
+from sklearn.preprocessing import StandardScaler
+from sklearn import preprocessing
 
 # Node processes:
 def process_img(args=None):
@@ -34,6 +41,7 @@ class Realsense(Node):
     def __init__(self, fps= 60):
         super().__init__('realsense')
         self.image_publisher = self.create_publisher(Image,'image',10)
+        self.detection_publisher = self.create_publisher(String,'detection',10)
         self.bridge=CvBridge()
         self.pipeline = rs.pipeline()
         config = rs.config()
@@ -62,6 +70,7 @@ class Realsense(Node):
         count= 1
         refTime= time.process_time()
         freq= 60
+        self.test = False
 
         
         # Wait for a coherent tuple of frames: depth, color and accel
@@ -76,6 +85,27 @@ class Realsense(Node):
         # Convert images to numpy arrays
         depth_image = np.asanyarray(depth_frame.get_data())
         self.color_image = np.asanyarray(color_frame.get_data())
+
+
+        hsv = cv2.cvtColor(self.color_image, cv2.COLOR_BGR2HSV)
+        h,s,v = cv2.split(hsv)
+         
+        print(h)
+        print(s)
+        print(v)
+        hmin = 45
+        hmax = 75
+        tmp = np.uint8((hmin < h)&(h < hmax) & (s> 150) & (v> 100))
+
+        if(np.sum(tmp)>1000):
+            self.test = True
+
+
+        tmp = tmp*255
+        self.color_image=cv2.merge((tmp,tmp,tmp))
+        kernel = np.ones((3,3),np.uint8)
+        self.color_image = cv2.dilate(self.color_image,kernel,iterations = 10)
+
 
         # Apply colormap on depth image (image must be converted to 8-bit per pixel first)
         depth_colormap = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.03), cv2.COLORMAP_JET)
@@ -111,6 +141,12 @@ class Realsense(Node):
         msg_image.header.stamp = self.get_clock().now().to_msg()
         msg_image.header.frame_id = "image"
         self.image_publisher.publish(msg_image)
+        myStr = String()
+        if self.test == True:
+            myStr.data = "bottle founded"
+        else:
+            myStr.data = "bottle unfounded"
+        self.detection_publisher.publish(myStr)
         
 
 
