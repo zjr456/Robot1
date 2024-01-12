@@ -1,2 +1,8 @@
 # Robot1
-About the code of the robot course
+
+UV LARM Lecture
+
+# Challenge 1
+
+ALL my code is in challenge1 ROS package
+
