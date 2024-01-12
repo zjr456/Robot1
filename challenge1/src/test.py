@@ -4,6 +4,13 @@ import sys, cv2, rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image 
 from cv_bridge import CvBridge
+import cv2
+import numpy as np
+import os
+from sklearn.svm import LinearSVC
+from scipy.cluster.vq import *
+from sklearn.preprocessing import StandardScaler
+from sklearn import preprocessing
 
 # Node processes:
 def process_img(args=None):
