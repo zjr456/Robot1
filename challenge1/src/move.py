@@ -30,40 +30,40 @@ def scan_callback(scanMsg):
             aPoint = [
                 math.cos(angle) * aDistance,
                 math.sin(angle) * aDistance,
-                0
+                0.0
             ]
             obstacles.append(aPoint)
-            if (0.01 < aPoint[0] < 0.2 and 0.1 < aPoint[1] < 0.5):
+            if (0.01 < aPoint[0] < 0.2 and 0.3 < aPoint[1] < 0.7) or (0.01 < aPoint[0] < 0.1 and 0.1 < aPoint[1] < 0.3 ) :
                 obstacles_right = True
                 cmd_debug_points_right.append(aPoint)
-            if (-0.2 < aPoint[0] < -0.01 and 0.1 < aPoint[1] < 0.5):
+            if (-0.2 < aPoint[0] < -0.01 and 0.3 < aPoint[1] < 0.7)or(-0.1 < aPoint[0] < -0.01 and 0.1 < aPoint[1] < 0.3 ):
                 obstacles_left = True
                 cmd_debug_points_left.append(aPoint)
         angle += scanMsg.angle_increment
 
     velo = Twist()
 
-    time.sleep(0.1)
-    if len(cmd_debug_points_right) + len(cmd_debug_points_left) > 150:
-        velo.linear.x = 0.0
-        velo.angular.z = 0.16
-        time.sleep(0.5)
+    
         
-
-    elif len(cmd_debug_points_right) > len(cmd_debug_points_left):
+    if (len(cmd_debug_points_right) - len(cmd_debug_points_left)) > 15:
         print("go Left")
-        velo.angular.z = 0.005 * (len(cmd_debug_points_right) + len(cmd_debug_points_left)) + 0.013 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
+        velo.angular.z = 0.05 * (len(cmd_debug_points_right) + len(cmd_debug_points_left)) + 0.13 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
         velo.linear.x = 0.0
     
-    elif len(cmd_debug_points_right) < len(cmd_debug_points_left):
+    elif (len(cmd_debug_points_left) - len(cmd_debug_points_right)) > 15:
         print("go right")
-        velo.angular.z = 0.005 * (len(cmd_debug_points_right) + len(cmd_debug_points_left)) + 0.013 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
+        velo.angular.z = 0.05 * (len(cmd_debug_points_right) + len(cmd_debug_points_left)) + 0.13 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
         velo.linear.x = 0.0
 
     else:
-        velo.linear.x = 0.3
-        velo.angular.z = 0.0
+        speed = 0.3 - 0.05 *(len(cmd_debug_points_right) + len(cmd_debug_points_left))
+        if speed < 0:
+            speed = 0.0
+        velo.linear.x = speed
+        velo.angular.z = 0.5 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
 
+    print(velo.linear.x)
+    print(velo.angular.z)
         
 
     
