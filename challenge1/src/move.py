@@ -38,20 +38,22 @@ def scan_callback(scanMsg):
     velo = Twist()
 
     
-    if 20 < (len(cmd_debug_points_right) + len(cmd_debug_points_left)) < 50:
+    if 25 < (len(cmd_debug_points_right) + len(cmd_debug_points_left)) < 50:
         if len(cmd_debug_points_right) > len(cmd_debug_points_left):
             velo.angular.z = -1.0
+            time.sleep(0.3)
         if len(cmd_debug_points_right) < len(cmd_debug_points_left):
             velo.angular.z = 1.0
+            time.sleep(0.3)
          
     elif (len(cmd_debug_points_right) - len(cmd_debug_points_left)) > 10:
         print("go Left")
-        velo.angular.z = 0.02 * (len(cmd_debug_points_right) + len(cmd_debug_points_left)) + 0.013 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
+        velo.angular.z = -0.2 + 0.02 * (len(cmd_debug_points_right) + len(cmd_debug_points_left)) - 0.013 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
         velo.linear.x = 0.0
     
     elif (len(cmd_debug_points_left) - len(cmd_debug_points_right)) > 10:
         print("go right")
-        velo.angular.z = 0.02 * (len(cmd_debug_points_right) + len(cmd_debug_points_left)) + 0.013 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
+        velo.angular.z = 0.2 + 0.02 * (len(cmd_debug_points_right) + len(cmd_debug_points_left)) + 0.013 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
         velo.linear.x = 0.0
 
     else:
