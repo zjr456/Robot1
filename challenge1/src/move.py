@@ -17,13 +17,9 @@ rosNode = None
 def scan_callback(scanMsg):
     global rosNode
     angle = scanMsg.angle_min + math.pi/2
-    #obstacles_left = False
-    #obstacles_right = False
     obstacles = []
     cmd_debug_points_left = []
     cmd_debug_points_right = []
-    #obstacles_right = False
-    #obstacles_left = False
 
     for aDistance in scanMsg.ranges:
         if 0.1 < aDistance < 5.0:
@@ -33,37 +29,45 @@ def scan_callback(scanMsg):
                 0.0
             ]
             obstacles.append(aPoint)
-            if (0.01 < aPoint[0] < 0.2 and 0.3 < aPoint[1] < 0.7) or (0.01 < aPoint[0] < 0.1 and 0.1 < aPoint[1] < 0.3 ) :
-                obstacles_right = True
+            if (0.01 < aPoint[0] < 0.2 and 0.05 < aPoint[1] < 0.5) :
                 cmd_debug_points_right.append(aPoint)
-            if (-0.2 < aPoint[0] < -0.01 and 0.3 < aPoint[1] < 0.7)or(-0.1 < aPoint[0] < -0.01 and 0.1 < aPoint[1] < 0.3 ):
-                obstacles_left = True
+            if (-0.2 < aPoint[0] < -0.01 and 0.05 < aPoint[1] < 0.5):
                 cmd_debug_points_left.append(aPoint)
         angle += scanMsg.angle_increment
 
     velo = Twist()
 
     
-        
-    if (len(cmd_debug_points_right) - len(cmd_debug_points_left)) > 15:
+    if 20 < (len(cmd_debug_points_right) + len(cmd_debug_points_left)) < 50:
+        if len(cmd_debug_points_right) > len(cmd_debug_points_left):
+            velo.angular.z = -1.0
+        if len(cmd_debug_points_right) < len(cmd_debug_points_left):
+            velo.angular.z = 1.0
+         
+    elif (len(cmd_debug_points_right) - len(cmd_debug_points_left)) > 10:
         print("go Left")
-        velo.angular.z = 0.05 * (len(cmd_debug_points_right) + len(cmd_debug_points_left)) + 0.13 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
+        velo.angular.z = 0.02 * (len(cmd_debug_points_right) + len(cmd_debug_points_left)) + 0.013 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
         velo.linear.x = 0.0
     
-    elif (len(cmd_debug_points_left) - len(cmd_debug_points_right)) > 15:
+    elif (len(cmd_debug_points_left) - len(cmd_debug_points_right)) > 10:
         print("go right")
-        velo.angular.z = 0.05 * (len(cmd_debug_points_right) + len(cmd_debug_points_left)) + 0.13 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
+        velo.angular.z = 0.02 * (len(cmd_debug_points_right) + len(cmd_debug_points_left)) + 0.013 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
         velo.linear.x = 0.0
 
     else:
-        speed = 0.3 - 0.05 *(len(cmd_debug_points_right) + len(cmd_debug_points_left))
+        speed = 0.15 - 0.05 *(len(cmd_debug_points_right) + len(cmd_debug_points_left))
         if speed < 0:
             speed = 0.0
         velo.linear.x = speed
         velo.angular.z = 0.5 * (len(cmd_debug_points_right) - len(cmd_debug_points_left))
+        if velo.angular.z > 1.0:
+            velo.angular.z = 1.0
+        if velo.angular.z < -1.0:
+            velo.angular.z = -1.0
 
     print(velo.linear.x)
     print(velo.angular.z)
+    print(len(cmd_debug_points_right) + len(cmd_debug_points_left))
         
 
     
