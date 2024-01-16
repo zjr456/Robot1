@@ -43,13 +43,13 @@ def scan_callback(scanMsg, value):
          
     if len(cmd_debug_points_right) > 0:
         print("avoid Left")
-        velo.angular.z = 1.0
+        velo.angular.z = 1.5
         velo.linear.x = 0.05
        
         
     elif len(cmd_debug_points_left) > 0:
         print("avoid right")
-        velo.angular.z = -1.0
+        velo.angular.z = -1.5
         velo.linear.x = 0.05
 
     else:

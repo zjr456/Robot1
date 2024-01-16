@@ -59,9 +59,14 @@ class Realsense(Node):
             exit(0)
         config.enable_stream(rs.stream.color, 848, 480, rs.format.bgr8, 60)
         config.enable_stream(rs.stream.depth, 848, 480, rs.format.z16, 60)
+
+        self.align_to = rs.stream.depth
+        self.align = rs.align(self.align_to)
+
 # Start streaming
         self.pipeline.start(config)
         self.isOk = True
+        self.color_info = (0, 0, 255)
        
     
     
@@ -76,38 +81,59 @@ class Realsense(Node):
         # Wait for a coherent tuple of frames: depth, color and accel
         frames = self.pipeline.wait_for_frames()
 
-        color_frame = frames.first(rs.stream.color)
-        depth_frame = frames.first(rs.stream.depth)
+
+        #Aligning color frame to depth frame
+        aligned_frames =  self.align.process(frames)
+        depth_frame = aligned_frames.get_depth_frame()
+        color_frame = aligned_frames.get_color_frame()
 
         if not (depth_frame and color_frame):
             return
 
         # Convert images to numpy arrays
         depth_image = np.asanyarray(depth_frame.get_data())
+        print(depth_image)
         self.color_image = np.asanyarray(color_frame.get_data())
 
 
         hsv = cv2.cvtColor(self.color_image, cv2.COLOR_BGR2HSV)
         h,s,v = cv2.split(hsv)
          
-        print(h)
-        print(s)
-        print(v)
+        #print(h)
+        #print(s)
+        #print(v)
         hmin = 45
         hmax = 75
-        tmp = np.uint8((hmin < h)&(h < hmax) & (s> 150) & (v> 100))
+        mask = np.uint8((hmin < h)&(h < hmax) & (s> 100) & (v> 50))
 
-        if(np.sum(tmp)>1000):
+        if(np.sum(mask)>1000):
             self.test = True
+        #print (np.sum(tmp))
+        mask = mask*255
+        #self.color_image=cv2.merge((tmp,tmp,tmp))
 
 
-        tmp = tmp*255
-        self.color_image=cv2.merge((tmp,tmp,tmp))
+
+
         kernel = np.ones((3,3),np.uint8)
-        self.color_image = cv2.dilate(self.color_image,kernel,iterations = 10)
+        mask = cv2.erode(mask, kernel, iterations = 2)
+        mask = cv2.dilate(mask,kernel,iterations = 2)
+        mask = cv2.blur(mask, (7, 7))
 
+        print(mask.shape)
 
+        elements=cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
+        if len(elements) > 0:
+            c=max(elements, key=cv2.contourArea)
+            ((x, y), rayon)=cv2.minEnclosingCircle(c)
+            if rayon>30:
+                cv2.circle(self.color_image, (int(x), int(y)), int(rayon), self.color_info, 2)
+                cv2.circle(self.color_image, (int(x), int(y)), 5, self.color_info, 10)
+                cv2.line(self.color_image, (int(x), int(y)), (int(x)+150, int(y)), self.color_info, 2)
+                cv2.putText(self.color_image, "Objet !!!", (int(x)+10, int(y) -10), cv2.FONT_HERSHEY_DUPLEX, 1, self.color_info, 1, cv2.LINE_AA)
         # Apply colormap on depth image (image must be converted to 8-bit per pixel first)
+            depth = depth_frame.get_distance(x, y)
+            print(depth)
         depth_colormap = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.03), cv2.COLORMAP_JET)
 
         depth_colormap_dim = depth_colormap.shape
