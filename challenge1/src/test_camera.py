@@ -132,6 +132,7 @@ class Realsense(Node):
                 cv2.line(self.color_image, (int(x), int(y)), (int(x)+150, int(y)), self.color_info, 2)
                 cv2.putText(self.color_image, "Objet !!!", (int(x)+10, int(y) -10), cv2.FONT_HERSHEY_DUPLEX, 1, self.color_info, 1, cv2.LINE_AA)
         # Apply colormap on depth image (image must be converted to 8-bit per pixel first)
+            x, y = int(x), int(y)
             depth = depth_frame.get_distance(x, y)
             print(depth)
         depth_colormap = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.03), cv2.COLORMAP_JET)
