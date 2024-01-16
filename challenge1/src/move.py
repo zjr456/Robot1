@@ -41,14 +41,14 @@ def scan_callback(scanMsg):
    
     if 110 < (len(cmd_debug_points_right) + len(cmd_debug_points_left)) < 180:
         if len(cmd_debug_points_right) > len(cmd_debug_points_left):
-            velo.angular.z = -1.2
+            velo.angular.z = 1.0
             velo.linear.x = 0.0
             print("Left")
             
            
         if len(cmd_debug_points_right) < len(cmd_debug_points_left):
-            velo.angular.z = 1.2
-            velo.linear.x = -0.1
+            velo.angular.z = -1.0
+            velo.linear.x = 0.0
             print("right")
             
             
@@ -62,7 +62,7 @@ def scan_callback(scanMsg):
     elif (len(cmd_debug_points_left) - len(cmd_debug_points_right)) > 20:
         print("go right")
         velo.angular.z = -0.5
-        velo.linear.x = -0.1
+        velo.linear.x = 0.0
 
     else:
         speed = 0.15 - 0.05 *(len(cmd_debug_points_right) + len(cmd_debug_points_left))
@@ -77,7 +77,9 @@ def scan_callback(scanMsg):
         if velo.angular.z < -1.0:
             velo.angular.z = -1.0
             print("go right")
-    time.sleep(0.3)
+
+
+    time.sleep(0.6)
     print(velo.linear.x)
     print(velo.angular.z)
     print(len(cmd_debug_points_right) + len(cmd_debug_points_left))
