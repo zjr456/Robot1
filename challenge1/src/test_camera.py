@@ -5,6 +5,7 @@ from rclpy.node import Node
 from sensor_msgs.msg import Image 
 from cv_bridge import CvBridge
 from std_msgs.msg import String
+from std_msgs.msg import Float32
 import cv2
 import numpy as np
 import os
@@ -42,6 +43,7 @@ class Realsense(Node):
         super().__init__('realsense')
         self.image_publisher = self.create_publisher(Image,'image',10)
         self.detection_publisher = self.create_publisher(String,'detection',10)
+        self.distancebottle_publisher = self.create_publisher(Float32,'distancebottle',10)
         self.bridge=CvBridge()
         self.pipeline = rs.pipeline()
         config = rs.config()
@@ -119,7 +121,7 @@ class Realsense(Node):
         mask = cv2.erode(mask, kernel, iterations = 2)
         mask = cv2.dilate(mask,kernel,iterations = 2)
         mask = cv2.blur(mask, (7, 7))
-
+        self.color_image = cv2.cvtColor(mask,cv2.COLOR_GRAY2BGR)
         print(mask.shape)
 
         elements=cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
@@ -133,8 +135,9 @@ class Realsense(Node):
                 cv2.putText(self.color_image, "Objet !!!", (int(x)+10, int(y) -10), cv2.FONT_HERSHEY_DUPLEX, 1, self.color_info, 1, cv2.LINE_AA)
         # Apply colormap on depth image (image must be converted to 8-bit per pixel first)
             x, y = int(x), int(y)
-            depth = depth_frame.get_distance(x, y)
-            print(depth)
+            self.depth = depth_frame.get_distance(x, y)
+            print(self.depth)
+
         depth_colormap = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.03), cv2.COLORMAP_JET)
 
         depth_colormap_dim = depth_colormap.shape
@@ -174,6 +177,9 @@ class Realsense(Node):
         else:
             myStr.data = "bottle unfounded"
         self.detection_publisher.publish(myStr)
+        myDistance = Float32()
+        myDistance.data = self.depth
+        self.distancebottle_publisher.publish(myDistance)
         
 
 
