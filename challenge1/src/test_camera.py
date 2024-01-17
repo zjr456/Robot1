@@ -14,6 +14,8 @@ from scipy.cluster.vq import *
 from sklearn.preprocessing import StandardScaler
 from sklearn import preprocessing
 
+import time
+
 # Node processes:
 def process_img(args=None):
     rclpy.init(args=args)
@@ -46,6 +48,7 @@ class Realsense(Node):
         self.distancebottle_publisher = self.create_publisher(Float32,'distancebottle',10)
         self.bridge=CvBridge()
         self.pipeline = rs.pipeline()
+        self.colorizer = rs.colorizer()
         config = rs.config()
         pipeline_wrapper = rs.pipeline_wrapper(self.pipeline)
         pipeline_profile = config.resolve(pipeline_wrapper)
@@ -87,6 +90,8 @@ class Realsense(Node):
         #Aligning color frame to depth frame
         aligned_frames =  self.align.process(frames)
         depth_frame = aligned_frames.get_depth_frame()
+        colorized_depth = self.colorizer.colorize(depth_frame)
+        aligned_color_frame = aligned_frames.get_color_frame()
         color_frame = aligned_frames.get_color_frame()
 
         if not (depth_frame and color_frame):
@@ -96,6 +101,7 @@ class Realsense(Node):
         depth_image = np.asanyarray(depth_frame.get_data())
         print(depth_image)
         self.color_image = np.asanyarray(color_frame.get_data())
+        copied_image = np.asanyarray(color_frame.get_data())
 
 
         hsv = cv2.cvtColor(self.color_image, cv2.COLOR_BGR2HSV)
@@ -123,7 +129,7 @@ class Realsense(Node):
         mask = cv2.blur(mask, (7, 7))
         self.color_image = cv2.cvtColor(mask,cv2.COLOR_GRAY2BGR)
         print(mask.shape)
-
+        
         elements=cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
         if len(elements) > 0:
             c=max(elements, key=cv2.contourArea)
@@ -146,7 +152,7 @@ class Realsense(Node):
         sys.stdout.write( f"\r- {color_colormap_dim} - {depth_colormap_dim} - ({round(freq)} fps)" )
 
         # Show images
-        images = np.hstack((self.color_image, depth_colormap))
+        images = np.hstack((np.asanyarray(aligned_color_frame.get_data()), np.asanyarray(aligned_color_frame.get_data())))
 
         # Show images
         cv2.namedWindow('RealSense', cv2.WINDOW_AUTOSIZE)
