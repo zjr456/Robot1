@@ -24,10 +24,10 @@ def souris(event, x, y, flags, param):
     lo[0]=color-10
     hi[0]=color+10
 
-color=
+color=67
 
-lo=np.array([color-5, 100, 50])
-hi=np.array([color+5, 255,255])
+lo=np.array([color-8, 100, 50])
+hi=np.array([color+8, 255,255])
 
 color_info=(0, 0, 255)
 

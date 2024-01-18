@@ -65,7 +65,7 @@ class Realsense(Node):
         config.enable_stream(rs.stream.color, 848, 480, rs.format.bgr8, 60)
         config.enable_stream(rs.stream.depth, 848, 480, rs.format.z16, 60)
 
-        self.align_to = rs.stream.depth
+        self.align_to = rs.stream.color
         self.align = rs.align(self.align_to)
 
 # Start streaming
@@ -90,28 +90,28 @@ class Realsense(Node):
         #Aligning color frame to depth frame
         aligned_frames =  self.align.process(frames)
         depth_frame = aligned_frames.get_depth_frame()
-        colorized_depth = self.colorizer.colorize(depth_frame)
         aligned_color_frame = aligned_frames.get_color_frame()
-        color_frame = aligned_frames.get_color_frame()
 
-        if not (depth_frame and color_frame):
+        if not depth_frame or not aligned_color_frame:
             return
 
-        # Convert images to numpy arrays
         depth_image = np.asanyarray(depth_frame.get_data())
-        print(depth_image)
-        self.color_image = np.asanyarray(color_frame.get_data())
-        copied_image = np.asanyarray(color_frame.get_data())
+        self.color_image = np.asanyarray(aligned_color_frame.get_data())
+        # convert color image to BGR for OpenCV
+        r, g, b = cv2.split(self.color_image)
+        self.color_image = cv2.merge((b, g, r))
+        
+        
 
-
+        # Convert images to numpy arrays
         hsv = cv2.cvtColor(self.color_image, cv2.COLOR_BGR2HSV)
         h,s,v = cv2.split(hsv)
          
         #print(h)
         #print(s)
         #print(v)
-        hmin = 45
-        hmax = 75
+        hmin = 50
+        hmax = 85
         mask = np.uint8((hmin < h)&(h < hmax) & (s> 100) & (v> 50))
 
         if(np.sum(mask)>1000):
@@ -124,10 +124,10 @@ class Realsense(Node):
 
 
         kernel = np.ones((3,3),np.uint8)
-        mask = cv2.erode(mask, kernel, iterations = 2)
-        mask = cv2.dilate(mask,kernel,iterations = 2)
+        mask = cv2.erode(mask, kernel, iterations = 1)
+        mask = cv2.dilate(mask,kernel,iterations = 1)
         mask = cv2.blur(mask, (7, 7))
-        self.color_image = cv2.cvtColor(mask,cv2.COLOR_GRAY2BGR)
+        #self.color_image = cv2.cvtColor(mask,cv2.COLOR_GRAY2BGR)
         print(mask.shape)
         
         elements=cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
@@ -156,7 +156,8 @@ class Realsense(Node):
 
         # Show images
         cv2.namedWindow('RealSense', cv2.WINDOW_AUTOSIZE)
-        cv2.imshow('RealSense', images)
+        cv2.imshow('RealSense', self.color_image)
+        #cv2.imshow('RealSense', mask)
         cv2.waitKey(1)
 
         # Frequency:
