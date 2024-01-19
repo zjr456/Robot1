@@ -58,15 +58,18 @@ class Move(Node):
             print('x_label')
             print(self.x_label)
 
+
             if(0<=self.x_label )and(self.x_label<424):
                 ratio = ((424-int(self.x_label))/424*43)
-                x_real_label = self.distancebottle*math.sin(ratio)
-                y_real_label = self.distancebottle*math.cos(ratio)
+                x_real_label = self.distancebottle*math.sin(math.radians(ratio))*(-1)
+                y_real_label = self.distancebottle*math.cos(math.radians(ratio))
             
-            elif (424>=self.x_label )and(self.x_label<=848):
-                ratio = ((848-int(self.x_label))/424*43)
-                x_real_label = self.distancebottle*math.sin(ratio)
-                y_real_label = self.distancebottle*math.cos(ratio)
+            elif (424<=self.x_label )and(self.x_label<=848):
+                ratio = ((int(self.x_label)-424)/424*43)
+                print('zzz')
+                print(math.radians(ratio))
+                x_real_label = self.distancebottle*math.sin(math.radians(ratio))
+                y_real_label = self.distancebottle*math.cos(math.radians(ratio))
             else :
                 x_real_label = None
                 y_real_label = None
