@@ -28,7 +28,9 @@ class Move(Node):
         self.velocity_publisher = self.create_publisher(Twist, '/cmd_vel', 10)
         self.cloud_publisher = self.create_publisher(pc2.PointCloud2,'laser_link',10)
         self.isOk = True
-        self.detection = True
+        self.detection = False
+        self.distancebottle = -1.0
+        self.x_label = -1.0
 
     def bottlepostion_callback(self,msg):
         self.x_label = msg.data
@@ -36,6 +38,7 @@ class Move(Node):
 
 
     def marker_callback(self,marker):
+        print('obstacle!!!')
         pass
         
 
@@ -48,30 +51,43 @@ class Move(Node):
         if self.detection == True:
             print('hello')
             marker = Marker()
-            marker.header.frame_id = 'map'
+            marker.header.frame_id = 'base_link'
             marker.type = Marker.SPHERE
 
             self.x_label = int(self.x_label)
-            
+            print('x_label')
+            print(self.x_label)
+
             if(0<=self.x_label )and(self.x_label<424):
-                ratio = -int((424-int(self.x_label))/424*43)
+                ratio = ((424-int(self.x_label))/424*43)
+                x_real_label = self.distancebottle*math.sin(ratio)
+                y_real_label = self.distancebottle*math.cos(ratio)
+            
             elif (424>=self.x_label )and(self.x_label<=848):
-                ratio = int((848-int(self.x_label))/424*43)
+                ratio = ((848-int(self.x_label))/424*43)
+                x_real_label = self.distancebottle*math.sin(ratio)
+                y_real_label = self.distancebottle*math.cos(ratio)
+            else :
+                x_real_label = None
+                y_real_label = None
 
-            x_real_label = self.distancebottle*math.sin(ratio)
-            y_real_label = self.distancebottle*math.cos(ratio)
-
-            marker.pose.position.x = x_real_label
-            marker.pose.position.y = y_real_label
-            marker.pose.position.z = 0.0
-            marker.scale.x = 0.2
-            marker.scale.y = 0.2
-            marker.scale.z = 0.2
-            marker.color.r = 1.0
-            marker.color.g = 0.0
-            marker.color.b = 0.0
-            marker.color.a = 1.0
-            self.marker_publisher.publish(marker)
+            print('x\n')
+            print(x_real_label)
+            print('y\n')
+            print(y_real_label)
+            
+            if (x_real_label and y_real_label):
+                marker.pose.position.x = x_real_label
+                marker.pose.position.y = y_real_label
+                marker.pose.position.z = 0.0
+                marker.scale.x = 0.2
+                marker.scale.y = 0.2
+                marker.scale.z = 0.2
+                marker.color.r = 1.0
+                marker.color.g = 0.0
+                marker.color.b = 0.0
+                marker.color.a = 1.0
+                self.marker_publisher.publish(marker)
 
         for aDistance in scanMsg.ranges:
             if 0.1 < aDistance < 5.0:
@@ -104,10 +120,10 @@ class Move(Node):
             velo.linear.x = 0.15
             velo.angular.z = 0.0 
 
-        print(velo.linear.x)
-        print(velo.angular.z)
-        print(len(cmd_debug_points_right) + len(cmd_debug_points_left))
-        print(len(cmd_debug_points_right) - len(cmd_debug_points_left))
+        #print(velo.linear.x)
+        #print(velo.angular.z)
+        #print(len(cmd_debug_points_right) + len(cmd_debug_points_left))
+        #print(len(cmd_debug_points_right) - len(cmd_debug_points_left))
         cloudPoints = pc2.create_cloud_xyz32(Header(frame_id='laser_link'),obstacles)
         self.publish_move(velo, cloudPoints)
         
@@ -118,10 +134,10 @@ class Move(Node):
         elif detectionMsg.data == "bottle founded":
             print("bottle founded")
             self.detection = True
-
+    
     def distancebottle_callback(self,distancebottleMsg):
         self.distancebottle = distancebottleMsg.data
-        print(distancebottleMsg.data)
+        #print(distancebottleMsg.data)
 
     def publish_move(self, velo, cloudPoints):
         self.velocity_publisher.publish(velo)
