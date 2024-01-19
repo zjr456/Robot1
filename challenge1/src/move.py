@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+from visualization_msgs.msg import Marker
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import LaserScan
@@ -19,18 +19,38 @@ from geometry_msgs.msg import Twist
 class Move(Node):
     def __init__(self, fps= 60):
         super().__init__('move')
+        self.marker_publisher = self.create_publisher( Marker,'marker_test',10)
         self.create_subscription( String, 'detection',self.detection_callback, 10)
         self.create_subscription( Float32, 'distancebottle',self.distancebottle_callback, 10)
         self.create_subscription( LaserScan, 'scan', self.scan_callback, 10)
-        self.velocity_publisher = self.create_publisher(Twist, '/multi/cmd_nav', 10)
+        self.velocity_publisher = self.create_publisher(Twist, '/cmd_vel', 10)
         self.cloud_publisher = self.create_publisher(pc2.PointCloud2,'laser_link',10)
         self.isOk = True
+
+    def marker_callback(self,marker):
+        pass
+        
 
     def scan_callback(self, scanMsg):
         angle = scanMsg.angle_min
         obstacles = []
         cmd_debug_points_left = []
         cmd_debug_points_right = []
+
+        marker = Marker()
+        marker.header.frame_id = 'map'
+        marker.type = Marker.SPHERE
+        marker.pose.position.x = 3.0
+        marker.pose.position.y = 0.0
+        marker.pose.position.z = 0.0
+        marker.scale.x = 0.2
+        marker.scale.y = 0.2
+        marker.scale.z = 0.2
+        marker.color.r = 1.0
+        marker.color.g = 0.0
+        marker.color.b = 0.0
+        marker.color.a = 1.0
+        self.marker_publisher.publish(marker)
 
         for aDistance in scanMsg.ranges:
             if 0.1 < aDistance < 5.0:
@@ -58,6 +78,7 @@ class Move(Node):
             velo.angular.z = -1.5
             velo.linear.x = 0.05
 
+        #elif self.detection == True:
         else:
             velo.linear.x = 0.15
             velo.angular.z = 0.0 

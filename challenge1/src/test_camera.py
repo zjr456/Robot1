@@ -3,6 +3,10 @@ import math
 import signal, time, numpy as np
 import sys, cv2, rclpy
 from rclpy.node import Node
+#from nav_msgs.msg import Path
+#from geometry_msgs.msg import PointStamped
+#from geometry_msgs.msg import Point
+from visualization_msgs.msg import Marker
 from sensor_msgs.msg import Image 
 from cv_bridge import CvBridge
 from std_msgs.msg import String
@@ -44,6 +48,9 @@ def process_img(args=None):
 class Realsense(Node):
     def __init__(self, fps= 60):
         super().__init__('realsense')
+        #self.path_publisher = self.create_publisher(Path,'path',10)
+        #self.pointstamped_publisher = self.create_publisher(PointStamped,'objet',10)
+        self.marker_publisher = self.create_publisher(Marker,'marker',10)
         self.image_publisher = self.create_publisher(Image,'image',10)
         self.detection_publisher = self.create_publisher(String,'detection',10)
         self.distancebottle_publisher = self.create_publisher(Float32,'distancebottle',10)
@@ -130,7 +137,7 @@ class Realsense(Node):
         mask = cv2.dilate(mask,kernel,iterations = 1)
         mask = cv2.blur(mask, (7, 7))
         #self.color_image = cv2.cvtColor(mask,cv2.COLOR_GRAY2BGR)
-        print(mask.shape)
+        #print(mask.shape)
         
         elements=cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
         if len(elements) > 0:
@@ -146,6 +153,8 @@ class Realsense(Node):
             self.depth = depth_frame.get_distance(x, y)
             dx ,dy, dz = rs.rs2_deproject_pixel_to_point(color_intrin, [x,y], self.depth)
             self.distance = math.sqrt(((dx)**2) + ((dy)**2) + ((dz)**2))
+            print(x)
+            print(y)
             print(self.distance)
 
         depth_colormap = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.03), cv2.COLORMAP_JET)
@@ -182,17 +191,19 @@ class Realsense(Node):
         msg_image.header.stamp = self.get_clock().now().to_msg()
         msg_image.header.frame_id = "image"
         self.image_publisher.publish(msg_image)
+
+        
         myStr = String()
         if self.test == True:
             myStr.data = "bottle founded"
         else:
             myStr.data = "bottle unfounded"
         self.detection_publisher.publish(myStr)
+
         myDistance = Float32()
         myDistance.data = self.distance
         self.distancebottle_publisher.publish(myDistance)
         
-
 
 
 process_img()
