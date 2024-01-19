@@ -25,7 +25,7 @@ class Move(Node):
         self.create_subscription( String, 'detection',self.detection_callback, 10)
         self.create_subscription( Float32, 'distancebottle',self.distancebottle_callback, 10)
         self.create_subscription( LaserScan, 'scan', self.scan_callback, 10)
-        self.velocity_publisher = self.create_publisher(Twist, '/cmd_vel', 10)
+        self.velocity_publisher = self.create_publisher(Twist, '/multi/cmd_nav', 10)
         self.cloud_publisher = self.create_publisher(pc2.PointCloud2,'laser_link',10)
         self.isOk = True
         self.detection = False
@@ -51,7 +51,7 @@ class Move(Node):
         if self.detection == True:
             print('hello')
             marker = Marker()
-            marker.header.frame_id = 'base_link'
+            marker.header.frame_id = 'map'
             marker.type = Marker.SPHERE
 
             self.x_label = int(self.x_label)
