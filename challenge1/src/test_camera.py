@@ -1,4 +1,5 @@
 import pyrealsense2 as rs
+import math
 import signal, time, numpy as np
 import sys, cv2, rclpy
 from rclpy.node import Node
@@ -96,6 +97,7 @@ class Realsense(Node):
             return
 
         depth_image = np.asanyarray(depth_frame.get_data())
+        color_intrin = aligned_color_frame.profile.as_video_stream_profile().intrinsics
         self.color_image = np.asanyarray(aligned_color_frame.get_data())
         # convert color image to BGR for OpenCV
         r, g, b = cv2.split(self.color_image)
@@ -142,7 +144,9 @@ class Realsense(Node):
         # Apply colormap on depth image (image must be converted to 8-bit per pixel first)
             x, y = int(x), int(y)
             self.depth = depth_frame.get_distance(x, y)
-            print(self.depth)
+            dx ,dy, dz = rs.rs2_deproject_pixel_to_point(color_intrin, [x,y], self.depth)
+            self.distance = math.sqrt(((dx)**2) + ((dy)**2) + ((dz)**2))
+            print(self.distance)
 
         depth_colormap = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.03), cv2.COLORMAP_JET)
 
@@ -185,7 +189,7 @@ class Realsense(Node):
             myStr.data = "bottle unfounded"
         self.detection_publisher.publish(myStr)
         myDistance = Float32()
-        myDistance.data = self.depth
+        myDistance.data = self.distance
         self.distancebottle_publisher.publish(myDistance)
         
 
