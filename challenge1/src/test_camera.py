@@ -54,6 +54,7 @@ class Realsense(Node):
         self.image_publisher = self.create_publisher(Image,'image',10)
         self.detection_publisher = self.create_publisher(String,'detection',10)
         self.distancebottle_publisher = self.create_publisher(Float32,'distancebottle',10)
+        self.bottleposition_publisher = self.create_publisher(Float32,'bottlepostion',10)
         self.bridge=CvBridge()
         self.pipeline = rs.pipeline()
         self.colorizer = rs.colorizer()
@@ -142,19 +143,19 @@ class Realsense(Node):
         elements=cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
         if len(elements) > 0:
             c=max(elements, key=cv2.contourArea)
-            ((x, y), rayon)=cv2.minEnclosingCircle(c)
+            ((self.x, self.y), rayon)=cv2.minEnclosingCircle(c)
             if rayon>30:
-                cv2.circle(self.color_image, (int(x), int(y)), int(rayon), self.color_info, 2)
-                cv2.circle(self.color_image, (int(x), int(y)), 5, self.color_info, 10)
-                cv2.line(self.color_image, (int(x), int(y)), (int(x)+150, int(y)), self.color_info, 2)
-                cv2.putText(self.color_image, "Objet !!!", (int(x)+10, int(y) -10), cv2.FONT_HERSHEY_DUPLEX, 1, self.color_info, 1, cv2.LINE_AA)
+                cv2.circle(self.color_image, (int(self.x), int(self.y)), int(rayon), self.color_info, 2)
+                cv2.circle(self.color_image, (int(self.x), int(self.y)), 5, self.color_info, 10)
+                cv2.line(self.color_image, (int(self.x), int(self.y)), (int(self.x)+150, int(self.y)), self.color_info, 2)
+                cv2.putText(self.color_image, "Objet !!!", (int(self.x)+10, int(self.y) -10), cv2.FONT_HERSHEY_DUPLEX, 1, self.color_info, 1, cv2.LINE_AA)
         # Apply colormap on depth image (image must be converted to 8-bit per pixel first)
-            x, y = int(x), int(y)
-            self.depth = depth_frame.get_distance(x, y)
-            dx ,dy, dz = rs.rs2_deproject_pixel_to_point(color_intrin, [x,y], self.depth)
+            self.x, self.y = int(self.x), int(self.y)
+            self.depth = depth_frame.get_distance(self.x, self.y)
+            dx ,dy, dz = rs.rs2_deproject_pixel_to_point(color_intrin, [self.x,self.y], self.depth)
             self.distance = math.sqrt(((dx)**2) + ((dy)**2) + ((dz)**2))
-            print(x)
-            print(y)
+            print(self.x)
+            print(self.y)
             print(self.distance)
 
         depth_colormap = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.03), cv2.COLORMAP_JET)
@@ -199,6 +200,11 @@ class Realsense(Node):
         else:
             myStr.data = "bottle unfounded"
         self.detection_publisher.publish(myStr)
+
+        position_msg = Float32()
+        self.x = float(self.x)
+        position_msg.data = self.x
+        self.bottleposition_publisher.publish(position_msg)
 
         myDistance = Float32()
         myDistance.data = self.distance
