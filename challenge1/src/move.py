@@ -6,6 +6,7 @@ from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Point32
 from std_msgs.msg import String
 from std_msgs.msg import Float32
+from nav_msgs.msg import Odometry
 import sensor_msgs_py.point_cloud2 as pc2
 from std_msgs.msg import Header
 import time
@@ -21,7 +22,10 @@ class Move(Node):
     def __init__(self, fps= 60):
         super().__init__('move')
         self.marker_publisher = self.create_publisher( Marker,'marker_test',10)
+        self.create_subscription( Float32, 'x',self.x_callback, 10)
+        self.create_subscription( Float32, 'z',self.z_callback, 10)
         self.create_subscription( Float32, 'bottlepostion',self.bottlepostion_callback, 10)
+        self.create_subscription( Odometry, 'odom',self.odom_callback,10)
         self.create_subscription( String, 'detection',self.detection_callback, 10)
         self.create_subscription( Float32, 'distancebottle',self.distancebottle_callback, 10)
         self.create_subscription( LaserScan, 'scan', self.scan_callback, 10)
@@ -31,9 +35,24 @@ class Move(Node):
         self.detection = False
         self.distancebottle = -1.0
         self.x_label = -1.0
+        self.y_label = -1.0
+
+
+    def x_callback(self,msg):
+        self.x_label = msg.data
+
+    def z_callback(self,msg):
+        #print('msg.data')
+        self.y_label = msg.data
+
+    def odom_callback(self,msg):
+        #print("odom_callback")
+        self.x_add = msg.pose.pose.position.x
+        self.y_add = msg.pose.pose.position.y
+        #print(self.x_add)
 
     def bottlepostion_callback(self,msg):
-        self.x_label = msg.data
+        pass
         #print('good')
 
 
@@ -54,30 +73,26 @@ class Move(Node):
             marker.header.frame_id = 'map'
             marker.type = Marker.SPHERE
 
-            self.x_label = int(self.x_label)
-            print('x_label')
-            print(self.x_label)
-
-
-            if(0<=self.x_label )and(self.x_label<424):
-                ratio = ((424-int(self.x_label))/424*43)
-                x_real_label = self.distancebottle*math.sin(math.radians(ratio))*(-1)
-                y_real_label = self.distancebottle*math.cos(math.radians(ratio))
+            # if(0<=self.x_label )and(self.x_label<424):
+            #     ratio = ((424-int(self.x_label))/424*43)
+            #     x_real_label = self.distancebottle*math.sin(math.radians(ratio))*(-1)
+            #     y_real_label = self.distancebottle*math.cos(math.radians(ratio))
             
-            elif (424<=self.x_label )and(self.x_label<=848):
-                ratio = ((int(self.x_label)-424)/424*43)
-                print('zzz')
-                print(math.radians(ratio))
-                x_real_label = self.distancebottle*math.sin(math.radians(ratio))
-                y_real_label = self.distancebottle*math.cos(math.radians(ratio))
-            else :
-                x_real_label = None
-                y_real_label = None
-
-            print('x\n')
-            print(x_real_label)
-            print('y\n')
-            print(y_real_label)
+            # elif (424<=self.x_label )and(self.x_label<=848):
+            #     ratio = ((int(self.x_label)-424)/424*43)
+            #     print('zzz')
+            #     print(math.radians(ratio))
+            #     x_real_label = self.distancebottle*math.sin(math.radians(ratio))
+            #     y_real_label = self.distancebottle*math.cos(math.radians(ratio))
+            # else :
+            #     x_real_label = None
+            #     y_real_label = None
+            x_real_label = self.x_label + self.x_add
+            y_real_label = self.y_label + self.y_add
+            # print('x\n')
+            # print(x_real_label)
+            # print('y\n')
+            # print(y_real_label)
             
             if (x_real_label and y_real_label):
                 marker.pose.position.x = x_real_label
@@ -132,10 +147,10 @@ class Move(Node):
         
     def detection_callback(self,detectionMsg):
         if detectionMsg.data == "bottle unfounded":
-            print("bottle unfounded")
+            #print("bottle unfounded")
             self.detection = False
         elif detectionMsg.data == "bottle founded":
-            print("bottle founded")
+            #print("bottle founded")
             self.detection = True
     
     def distancebottle_callback(self,distancebottleMsg):

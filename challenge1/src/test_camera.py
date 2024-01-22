@@ -54,6 +54,8 @@ class Realsense(Node):
         self.image_publisher = self.create_publisher(Image,'image',10)
         self.detection_publisher = self.create_publisher(String,'detection',10)
         self.distancebottle_publisher = self.create_publisher(Float32,'distancebottle',10)
+        self.x_publisher = self.create_publisher(Float32,'x',10)
+        self.y_publisher = self.create_publisher(Float32,'z',10)
         self.bottleposition_publisher = self.create_publisher(Float32,'bottlepostion',10)
         self.bridge=CvBridge()
         self.pipeline = rs.pipeline()
@@ -152,8 +154,8 @@ class Realsense(Node):
         # Apply colormap on depth image (image must be converted to 8-bit per pixel first)
             self.x, self.y = int(self.x), int(self.y)
             self.depth = depth_frame.get_distance(self.x, self.y)
-            dx ,dy, dz = rs.rs2_deproject_pixel_to_point(color_intrin, [self.x,self.y], self.depth)
-            self.distance = math.sqrt(((dx)**2) + ((dy)**2) + ((dz)**2))
+            self.dx ,dy, self.dz = rs.rs2_deproject_pixel_to_point(color_intrin, [self.x,self.y], self.depth)
+            self.distance = math.sqrt(((self.dx)**2) + ((dy)**2) + ((self.dz)**2))
             print(self.x)
             print(self.y)
             print(self.distance)
@@ -209,6 +211,14 @@ class Realsense(Node):
         myDistance = Float32()
         myDistance.data = self.distance
         self.distancebottle_publisher.publish(myDistance)
+
+        myDistance1 = Float32()
+        myDistance1.data = self.dx
+        self.x_publisher.publish(myDistance1)
+
+        myDistance2 = Float32()
+        myDistance2.data = self.dz
+        self.y_publisher.publish(myDistance2)
         
 
 
