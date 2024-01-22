@@ -33,9 +33,9 @@ class Move(Node):
         self.cloud_publisher = self.create_publisher(pc2.PointCloud2,'laser_link',10)
         self.isOk = True
         self.detection = False
-        self.distancebottle = -1.0
-        self.x_label = -1.0
-        self.y_label = -1.0
+        #self.distancebottle = -1.0
+        #self.x_label = -1.0
+        #self.y_label = -1.0
 
 
     def x_callback(self,msg):
@@ -49,6 +49,7 @@ class Move(Node):
         #print("odom_callback")
         self.x_add = msg.pose.pose.position.x
         self.y_add = msg.pose.pose.position.y
+        self.orientation_euler = msg.pose.pose.position.z
         #print(self.x_add)
 
     def bottlepostion_callback(self,msg):
@@ -67,10 +68,10 @@ class Move(Node):
         cmd_debug_points_left = []
         cmd_debug_points_right = []
 
-        if self.detection == True:
+        if self.detection == True and hasattr(self, 'x_add'):
             print('hello')
             marker = Marker()
-            marker.header.frame_id = 'map'
+            marker.header.frame_id = 'camera_link'
             marker.type = Marker.SPHERE
 
             # if(0<=self.x_label )and(self.x_label<424):
@@ -87,14 +88,19 @@ class Move(Node):
             # else :
             #     x_real_label = None
             #     y_real_label = None
-            x_real_label = self.x_label + self.x_add
-            y_real_label = self.y_label + self.y_add
+
+            x_real_label = self.x_label #+ self.x_add
+            y_real_label = self.y_label #+ self.y_add
+            #print(f'{self.x_add}')
+            #print(f'{self.orientation_euler}')
             # print('x\n')
             # print(x_real_label)
             # print('y\n')
             # print(y_real_label)
             
             if (x_real_label and y_real_label):
+                x_real_label = x_real_label
+                y_real_label = x_real_label
                 marker.pose.position.x = x_real_label
                 marker.pose.position.y = y_real_label
                 marker.pose.position.z = 0.0

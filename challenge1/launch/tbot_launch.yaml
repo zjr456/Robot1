@@ -2,7 +2,11 @@ launch:
 - node:
    pkg: "challenge1"
    exec: "move.py"
-   name: "moveMoveMove"
+   name: "moveMoveMove1"
+- node:
+   pkg: "challenge1"
+   exec: "test_camera.py"
+   name: "moveMoveMove2"
 - executable:
    cmd: "gnome-terminal --tab -e 'ros2 launch tbot_node minimal_launch.yaml'"
 
